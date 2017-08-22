@@ -37,11 +37,11 @@ function draw_init()
 
 	context1.beginPath();
 	
-	draw_advanced(context0, 'rgba(255, 0, 51, 0.4)', 20);
-	draw_advanced(context1, 'rgba(0, 0, 0, 0.4)', 40);
+	draw_advanced0();
+	draw_advanced1();
 }
 
-function draw_advanced(ctx, c, r)
+function draw_advanced0()
 {
 	var x;
 	var y;
@@ -50,13 +50,32 @@ function draw_advanced(ctx, c, r)
 	x = Math.random() * displayProps.w;
 	y = Math.random() * displayProps.h;
 
-	ctx.lineWidth = 0.01;
-	ctx.strokeStyle = c;
+	context0.lineWidth = 0.01;
+	context0.strokeStyle = 'rgba(255, 0, 51, 0.4)';
 
-	ctx.lineTo(x, y);
+	context0.lineTo(x, y);
 
-	ctx.stroke();
+	context0.stroke();
 
-	freq = setTimeout(draw_advanced, r, ctx, c);
+	freq = setTimeout(draw_advanced0, 20);
+}
+
+function draw_advanced1()
+{
+	var x;
+	var y;
+	var freq;
+
+	x = Math.random() * displayProps.w;
+	y = Math.random() * displayProps.h;
+
+	context1.lineWidth = 0.02;
+	context1.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+
+	context1.lineTo(x, y);
+
+	context1.stroke();
+
+	freq = setTimeout(draw_advanced1, 40);
 }
 
