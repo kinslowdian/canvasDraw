@@ -26,9 +26,6 @@ function draw_init()
 	canvas = document.querySelector(".display");
 	context = canvas.getContext("2d");
 
-	context.lineWidth = 0.01;
-	context.strokeStyle = '#ff0033';
-
 	canvas.width = displayProps.w;
 	canvas.height = displayProps.h;
 
@@ -47,6 +44,9 @@ function draw_init()
 function draw_basic()
 {
 	context.beginPath();
+
+	context.lineWidth = 0.01;
+	context.strokeStyle = '#ff0033';
 
 	for(var i = 0; i < 6000; i++)
 	{
@@ -71,6 +71,10 @@ function draw_advanced()
 
 	x = Math.random() * displayProps.w;
 	y = Math.random() * displayProps.h;
+
+	context.lineWidth = 0.01;
+	// context.strokeStyle = '#ff0033';
+	context.strokeStyle = 'rgba(255, 0, 51, 0.4)';
 
 	context.lineTo(x, y);
 
